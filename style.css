@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'Hauora';
+    src: url(./Hauora-Regular.woff2) format(woff);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Hauora';
+    src: url(./Hauora-Bold.woff2) format(woff);
+    font-style: normal;
+    font-weight: bold;
+}
+
+:root {
+    --birdie-blue: rgb(0, 162, 255);
+    --light-gray: rgb(240, 240, 240);
+}
+
+* {
+    font-family: 'Hauora', Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+#container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100px min-content 1fr;
+}
+
+/* Sidebar */
+
+#sidebar {
+    color: white;
+    background: var(--birdie-blue);
+    font-weight: bold;
+    padding: 0 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    order: 1;
+}
+
+.menu {
+    order: 0;
+}
+
+.profile {
+    order: 2;
+}
+
+/* Navigation */
+
+#nav {
+    background: white;
+    padding: 20px;
+}
+
+input {
+    background: var(--light-gray);
+    border: none;
+    border-radius: 32px;
+    padding: 12px 24px;
+    width: calc(100% - 48px);
+}
+
+#buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+button {
+    background: var(--birdie-blue);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 32px;
+    width: 100%;
+}
+
+/* Content */
+
+#content {
+    background: var(--light-gray);
+    padding: 20px;
+}
+
+.post {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+}
