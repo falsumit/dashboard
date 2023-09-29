@@ -1,102 +1,191 @@
 @font-face {
-    font-family: 'Hauora';
-    src: url(./Hauora-Regular.woff2) format(woff);
+    font-family: 'Figtree';
+    src: url(./Figtree-Regular.woff2) format(woff2);
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
-    font-family: 'Hauora';
-    src: url(./Hauora-Bold.woff2) format(woff);
+    font-family: 'Figtree';
+    src: url(./Figtree-Bold.woff2) format(woff2);
     font-style: normal;
     font-weight: bold;
 }
 
-:root {
-    --birdie-blue: rgb(0, 162, 255);
-    --light-gray: rgb(240, 240, 240);
-}
-
 * {
-    font-family: 'Hauora', Arial, Helvetica, sans-serif;
+    font-family: 'Figtree', Arial, Helvetica, sans-serif;
 }
 
-html, body {
+:root {
+    --birdie-blue: rgb(0, 154, 243);
+    --birdie-dark: rgb(0, 129, 204);
+    --gray-light: rgb(240, 240, 240);
+    --gray-dark: rgb(120, 120, 120);
+}
+
+
+html {
     height: 100%;
 }
 
-#container {
-    height: 100%;
-    display: grid;
-    grid-template-rows: 100px min-content 1fr;
+body {
+    min-height: 100%;
+    background: rgb(230, 230, 230);
 }
 
-/* Sidebar */
+h1, h2, h3 {
+    margin-top: 0;
+}
 
-#sidebar {
+h2 {
+    margin-bottom: 2rem;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+#navbar, button {
+    background: dodgerblue;
     color: white;
-    background: var(--birdie-blue);
     font-weight: bold;
+}
+
+button {
+    border: none;
+    border-radius: 32px;
+    padding: 10px 20px;
+}
+
+#main p {
+    color: rgb(110, 110, 110);
+}
+
+#navbar {
+    height: 80px;
+    width: calc(100% - 40px);
     padding: 0 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
+#logo {
     order: 1;
 }
 
-.menu {
+#burger {
     order: 0;
 }
 
-.profile {
+#avatar {
     order: 2;
 }
 
-/* Navigation */
+#container {
+    margin-top: 80px;
+}
 
-#nav {
-    background: white;
-    padding: 20px;
+#profile {
+    display: grid;
 }
 
 input {
-    background: var(--light-gray);
     border: none;
     border-radius: 32px;
-    padding: 12px 24px;
-    width: calc(100% - 48px);
+    background: rgb(230, 230, 230);
+    color: black;
+    padding: 10px 20px;
 }
 
 #buttons {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: stretch;
+    gap: 20px;
 }
 
-button {
-    background: var(--birdie-blue);
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 32px;
+#buttons button {
     width: 100%;
 }
 
-/* Content */
-
 #content {
-    background: var(--light-gray);
-    padding: 20px;
+    display: grid;
+    background: rgb(230, 230, 230);
+    margin: 20px;
 }
 
-.post {
+#profile, #posts > div, #announcements, #trending {
     background: white;
-    border-radius: 12px;
     padding: 20px;
+    filter: drop-shadow(0 4px 4px rgb(0, 0, 0, 0.1));
+}
+
+#posts > div, #announcements, #trending {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 720px) {
+    #content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: unset;
+    }
+
+    #posts > div, #announcements, #trending {
+        margin-bottom: unset;
+    }
+
+    #posts {
+        margin: 20px;
+        display: grid;
+        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 20px;
+    }
+
+    #announcements, #trending {
+        margin: 20px 20px 20px 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        margin-left: 200px;
+    }
+
+    #buttons {
+        display: block;
+    }
+    
+    #buttons button {
+        width: clamp(120px, 15%, 180px);
+        margin-right: 10px;
+    }
+
+    #buttons:last-child {
+        margin-right: 0;
+    }
+
+    #content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #navbar {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        width: 160px;
+        height: 100%;
+        min-height: 100vh;
+    }
 }
