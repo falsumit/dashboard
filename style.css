@@ -17,10 +17,11 @@
 }
 
 :root {
-    --birdie-blue: rgb(54, 138, 248);
-    --birdie-dark: rgb(29, 106, 207);
-    --gray-light: rgba(105, 145, 214, 0.08);
-    --gray-dark: rgb(120, 120, 120);
+    --birdie-blue: #368af8;
+    --birdie-dark: #1d6acf;
+    --gray-light: #f3f6fb;
+    --gray-dark: #505050;
+    --almost-black: #3c3c3c;
 }
 
 
@@ -34,7 +35,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: rgb(60, 60, 60);
+    color: var(--almost-black);
 }
 
 h1, h2, h3 {
@@ -61,17 +62,21 @@ button {
     padding: 10px 20px;
 }
 
+hr {
+    border: 1px solid var(--gray-light);
+}
+
 button:hover {
     background: var(--birdie-dark);
     cursor: pointer;
 }
 
 #main p {
-    color: rgb(110, 110, 110);
+    color: var(--gray-dark);
 }
 
 #navbar {
-    height: 80px;
+    height: 60px;
     width: calc(100% - 40px);
     padding: 0 20px;
     position: fixed;
@@ -100,7 +105,7 @@ button:hover {
 }
 
 #container {
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 #profile {
@@ -118,7 +123,7 @@ input {
     display: flex;
     flex-flow: row nowrap;
     justify-content: stretch;
-    gap: 20px;
+    gap: 10px;
 }
 
 #buttons button {
@@ -135,15 +140,19 @@ input {
     padding: 20px;
 }
 
-#posts > div, #announcements, #trending {
+#posts > div, #announcements {
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+#trending {
+    border-radius: 10px;
 }
 
 @media screen and (min-width: 720px) {
     #content {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1.5fr 1fr;
         margin: unset;
     }
 
@@ -164,7 +173,7 @@ input {
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 980px) {
     #container {
         display: grid;
         grid-template-columns: 1fr;
@@ -177,7 +186,7 @@ input {
     }
     
     #buttons button {
-        width: clamp(120px, 15%, 180px);
+        width: 160px;
         margin-right: 10px;
     }
 
