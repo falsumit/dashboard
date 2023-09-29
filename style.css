@@ -90,6 +90,10 @@ button:hover {
 
 #navbar p:hover {
     cursor: pointer;
+
+    .material-symbols-outlined {
+        top: 2px;
+    }
 }
 
 #logo {
@@ -110,6 +114,12 @@ button:hover {
 
 #profile {
     display: grid;
+}
+
+.material-symbols-outlined {
+    position: relative;
+    top: 5px;
+    line-height: 0;
 }
 
 input {
@@ -206,5 +216,13 @@ input {
         width: 160px;
         height: 100%;
         min-height: 100vh;
+    }
+
+    #navbar p {
+        padding-bottom: 4px;
+    }
+
+    .material-symbols-outlined {
+        line-height: unset;
     }
 }
