@@ -17,9 +17,9 @@
 }
 
 :root {
-    --birdie-blue: rgb(0, 154, 243);
-    --birdie-dark: rgb(0, 129, 204);
-    --gray-light: rgb(240, 240, 240);
+    --birdie-blue: rgb(54, 138, 248);
+    --birdie-dark: rgb(29, 106, 207);
+    --gray-light: rgba(105, 145, 214, 0.08);
     --gray-dark: rgb(120, 120, 120);
 }
 
@@ -30,7 +30,11 @@ html {
 
 body {
     min-height: 100%;
-    background: rgb(230, 230, 230);
+    background: var(--gray-light);
+}
+
+h1, h2, h3, h4 {
+    color: rgb(60, 60, 60);
 }
 
 h1, h2, h3 {
@@ -46,7 +50,7 @@ h4 {
 }
 
 #navbar, button {
-    background: dodgerblue;
+    background: var(--birdie-blue);
     color: white;
     font-weight: bold;
 }
@@ -55,6 +59,11 @@ button {
     border: none;
     border-radius: 32px;
     padding: 10px 20px;
+}
+
+button:hover {
+    background: var(--birdie-dark);
+    cursor: pointer;
 }
 
 #main p {
@@ -72,6 +81,10 @@ button {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+}
+
+#navbar p:hover {
+    cursor: pointer;
 }
 
 #logo {
@@ -97,8 +110,7 @@ button {
 input {
     border: none;
     border-radius: 32px;
-    background: rgb(230, 230, 230);
-    color: black;
+    background: var(--gray-light);
     padding: 10px 20px;
 }
 
@@ -115,14 +127,12 @@ input {
 
 #content {
     display: grid;
-    background: rgb(230, 230, 230);
     margin: 20px;
 }
 
 #profile, #posts > div, #announcements, #trending {
     background: white;
     padding: 20px;
-    filter: drop-shadow(0 4px 4px rgb(0, 0, 0, 0.1));
 }
 
 #posts > div, #announcements, #trending {
